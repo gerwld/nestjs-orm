@@ -29,13 +29,9 @@ export class PropertyController {
     }
 
 
-    @Patch()
+    @Patch(":id")
     update(
-        @Body(new ValidationPipe({
-            whitelist: true,
-            groups: ["update"],
-            always: true
-        }))
+        @Body()
         body: CreatePropertyDto) {
         return body
     }
